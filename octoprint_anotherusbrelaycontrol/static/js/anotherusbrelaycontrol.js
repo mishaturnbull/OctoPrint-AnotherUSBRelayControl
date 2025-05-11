@@ -57,7 +57,7 @@ $(function () {
                 }
             }));
 
-            OctoPrint.simpleApiGet("usbrelaycontrol").then(function (states) {
+            OctoPrint.simpleApiGet("anotherusbrelaycontrol").then(function (states) {
                 self.usbrelayButtons().forEach(function (item, index) {
                     self.usbrelayButtons.replace(item, {
                         icon: item.icon,
@@ -69,13 +69,13 @@ $(function () {
         }
 
         self.turnUSBRelayOn = function () {
-            OctoPrint.simpleApiCommand("usbrelaycontrol", "turnUSBRelayOn", {id: self.usbrelayButtons.indexOf(this)}).then(function () {
+            OctoPrint.simpleApiCommand("anotherusbrelaycontrol", "turnUSBRelayOn", {id: self.usbrelayButtons.indexOf(this)}).then(function () {
                 self.updateUSBRelayButtons();
             });
         }
 
         self.turnUSBRelayOff = function () {
-            OctoPrint.simpleApiCommand("usbrelaycontrol", "turnUSBRelayOff", {id: self.usbrelayButtons.indexOf(this)}).then(function () {
+            OctoPrint.simpleApiCommand("anotherusbrelaycontrol", "turnUSBRelayOff", {id: self.usbrelayButtons.indexOf(this)}).then(function () {
                 self.updateUSBRelayButtons();
             });
         }

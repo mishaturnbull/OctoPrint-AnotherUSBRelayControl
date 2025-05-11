@@ -27,15 +27,15 @@ class USBRelayControlPlugin(
             dict(
                 type="sidebar",
                 custom_bindings=True,
-                template="usbrelaycontrol_sidebar.jinja2",
+                template="anotherusbrelaycontrol_sidebar.jinja2",
                 icon="map-signs",
             ),
         ]
 
     def get_assets(self):
         return dict(
-            js=["js/usbrelaycontrol.js", "js/fontawesome-iconpicker.min.js"],
-            css=["css/usbrelaycontrol.css", "css/fontawesome-iconpicker.min.css"],
+            js=["js/anotherusbrelaycontrol.js", "js/fontawesome-iconpicker.min.js"],
+            css=["css/anotherusbrelaycontrol.css", "css/fontawesome-iconpicker.min.css"],
         )
 
     def get_settings_defaults(self):
@@ -179,8 +179,8 @@ class USBRelayControlPlugin(
                 displayName="USB Relay Control",
                 displayVersion=self._plugin_version,
                 type="github_release",
-                user="abudden",
-                repo="OctoPrint-USBRelayControl",
+                user="mishaturnbull",
+                repo="OctoPrint-AnotherUSBRelayControl",
                 current=self._plugin_version,
                 stable_branch=dict(
                     name="Stable",
@@ -194,7 +194,7 @@ class USBRelayControlPlugin(
                         comittish=["development", "master"],
                     )
                 ],
-                pip="https://github.com/abudden/OctoPrint-USBRelayControl/archive/{target_version}.zip",
+                pip="https://github.com/mishaturnbull/OctoPrint-AnotherUSBRelayControl/archive/{target_version}.zip",
             )
         )
 
