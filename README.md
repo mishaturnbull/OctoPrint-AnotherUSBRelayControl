@@ -1,5 +1,12 @@
 # OctoPrint USB Relay Control
 
+**This is a fork to fix one VERY specific issue!**  You probably want to use
+the upstream repo; abudden's work is much more reliable than mine.  This exists
+because I bought the wrong hardware, and rather than return it (trivially
+easy), I figured I'd attack it in software.  This fork LACKS the ability to
+read relay state (because I bought the wrong relay and it doesn't support
+that)!  Everything from here on out is the original, unaltered readme.
+
 USB Relay Control adds a sidebar with on/off buttons. You can add as many buttons as you want that will control each USB Relay connected to your Raspberry Pi.
 
 Very useful if you want to add some electronic/improvements to your printer.

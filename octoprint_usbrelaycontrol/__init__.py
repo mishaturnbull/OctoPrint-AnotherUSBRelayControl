@@ -126,7 +126,8 @@ class USBRelayControlPlugin(
                     self.relays[key].state(int(configuration["relaynumber"]), False)
 
     def get_api_commands(self):
-        return dict(turnUSBRelayOn=["id"], turnUSBRelayOff=["id"], getUSBRelayState=["id"])
+        #return dict(turnUSBRelayOn=["id"], turnUSBRelayOff=["id"], getUSBRelayState=["id"])
+        return dict(turnUSBRelayOn=["id"], turnUSBRelayOff=["id"]])
 
     def on_api_command(self, command, data):
         if not Permissions.PLUGIN_USBRELAYCONTROL_CONTROL.can():
@@ -136,12 +137,14 @@ class USBRelayControlPlugin(
         relaynumber = int(configuration["relaynumber"])
         key = self.get_relay_key(configuration)
 
+        '''
         if command == "getUSBRelayState":
             if configuration["active_mode"] == "active_low":
                 return flask.jsonify("off" if self.relays[key].state(relaynumber) else "on")
             elif configuration["active_mode"] == "active_high":
                 return flask.jsonify("on" if self.relays[key].state(relaynumber) else "off")
-        elif command == "turnUSBRelayOn":
+        '''
+        if command == "turnUSBRelayOn":
             self._logger.info("Turned on USB Relay {}".format(configuration["relaynumber"]))
 
             if configuration["active_mode"] == "active_low":
