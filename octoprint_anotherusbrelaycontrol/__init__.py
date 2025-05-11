@@ -127,7 +127,7 @@ class USBRelayControlPlugin(
 
     def get_api_commands(self):
         #return dict(turnUSBRelayOn=["id"], turnUSBRelayOff=["id"], getUSBRelayState=["id"])
-        return dict(turnUSBRelayOn=["id"], turnUSBRelayOff=["id"]])
+        return dict(turnUSBRelayOn=["id"], turnUSBRelayOff=["id"])
 
     def on_api_command(self, command, data):
         if not Permissions.PLUGIN_USBRELAYCONTROL_CONTROL.can():
